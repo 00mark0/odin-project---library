@@ -57,21 +57,21 @@
           <div class="desc">
             <p>
               This is a simple library app where you can add, remove, and search
-              for books. Click the button in the bottom-left to get started.
+              for books. Click the button at the bottom to get started.
             </p>
           </div>
         </div>
       </section>
       <section id="books">
         <h3>Your Books</h3>
-        <p>Here you will amass your collection</p>
+        <p id="booksDesc">Here you will amass your collection</p>
         <div class="cardContainer"></div>
       </section>
     </main>
     <footer>
       <button id="openForm"><i class="fas fa-plus"></i></button>
       <dialog id="bookDialog">
-        <form>
+        <form id="bookForm">
           <input type="text" placeholder="Title" id="titleInput" name="title" />
           <input
             type="text"

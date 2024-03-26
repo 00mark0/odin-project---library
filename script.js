@@ -19,6 +19,7 @@ const userBtn = document.getElementById("userBtn");
 const userDialog = document.getElementById("userDialog");
 const userClose = document.getElementById("userClose");
 const clearLibrary = document.getElementById("clearLibrary");
+let lastScrollTop = 0;
 
 let myLibrary = [];
 
@@ -66,10 +67,12 @@ const createCard = (book) => {
 
   const img = document.createElement("img");
   img.src = "img/book.png";
+  img.style.width = "64px";
+  img.style.height = "64px";
   card.appendChild(img);
 
-  const title = document.createElement("h2");
-  title.textContent = book.title;
+  const title = document.createElement("h4");
+  title.textContent = book.title.toUpperCase();
   card.appendChild(title);
 
   const author = document.createElement("p");
@@ -84,6 +87,10 @@ const createCard = (book) => {
   pages.textContent = `Pages: ${book.pages}`;
   card.appendChild(pages);
 
+  const btnContainer = document.createElement("div");
+  btnContainer.classList.add("btnContainer");
+  card.appendChild(btnContainer);
+
   const read = document.createElement("button");
   read.textContent = book.read ? "Read" : "Not Read";
   read.addEventListener("click", () => {
@@ -91,7 +98,7 @@ const createCard = (book) => {
     read.textContent = book.read ? "Read" : "Not Read";
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
   });
-  card.appendChild(read);
+  btnContainer.appendChild(read);
 
   const remove = document.createElement("button");
   remove.textContent = "Remove";
@@ -100,7 +107,7 @@ const createCard = (book) => {
     myLibrary.splice(myLibrary.indexOf(book), 1);
     localStorage.setItem("myLibrary", JSON.stringify(myLibrary));
   });
-  card.appendChild(remove);
+  btnContainer.appendChild(remove);
 
   cardContainer.appendChild(card);
 };
@@ -149,10 +156,33 @@ searchBtn.addEventListener("click", (e) => {
       createCard(book);
     }
   });
+  search.value = "";
 });
 
 displayAll.addEventListener("click", (e) => {
   e.preventDefault();
   cardContainer.textContent = "";
   displayLibrary();
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    let scrollTop = window.scrollY;
+    if (scrollTop > lastScrollTop) {
+      openForm.style.display = "none";
+    } else {
+      openForm.style.display = "block";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  },
+  false
+);
+
+search.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    searchBtn.click();
+    search.value = "";
+  }
 });

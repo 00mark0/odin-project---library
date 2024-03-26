@@ -120,7 +120,7 @@ header h1 {
   align-items: center;
   gap: 300px;
   padding: 20px;
-  background-color: #cbe7fb;
+  background-color: #42a5f5;
   padding: 200px;
 }
 
@@ -140,4 +140,203 @@ header h1 {
 
 .desc p {
   font-size: 1.3rem;
+}
+
+#books {
+  padding: 20px;
+}
+
+#books h3 {
+  font-size: 2.5rem;
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  text-align: center;
+  color: #0d47a1;
+}
+
+#books #booksDesc {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+  padding: 50px;
+  grid-auto-rows: 1fr;
+}
+
+.cardContainer .card {
+  background-color: #cbe7fb;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  min-width: 300px;
+  min-height: 300px;
+  text-align: center;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+.card h4 {
+  font-size: 1.5rem;
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+}
+
+.card p {
+  font-size: 1.2rem;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.card button {
+  background-color: #42a5f5;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #64b5f6;
+}
+
+#bookDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #1565c0;
+  border-radius: 10px;
+}
+
+#bookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #cbe7fb;
+  justify-content: center;
+  align-items: center;
+}
+
+#bookForm input {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+#bookForm button {
+  background-color: #42a5f5;
+  color: #ffffff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+  width: 50%;
+}
+
+#bookForm button:hover {
+  background-color: #64b5f6;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 47%;
+  padding: 20px;
+}
+
+footer #openForm {
+  background-color: #42a5f5;
+  color: #ffffff;
+  border: none;
+  padding: 20px 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+footer #openForm:hover {
+  background-color: #64b5f6;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  .user #userBtn {
+    width: 100%;
+  }
+
+  .welcome {
+    flex-direction: column;
+    gap: 50px;
+    padding: 50px;
+  }
+
+  .welcome .title {
+    width: 100%;
+  }
+
+  .desc {
+    width: 100%;
+  }
+
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 20px;
+  }
+
+  .cardContainer .card {
+    min-width: 200px;
+    min-height: 200px;
+  }
+
+  footer {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
 }
