@@ -313,6 +313,10 @@ footer #openForm:hover {
     min-width: 200px;
     min-height: 200px;
   }
+
+  footer {
+    left: 42%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -367,7 +371,7 @@ footer #openForm:hover {
   }
 
   footer {
-    left: 0;
+    left: 35%;
     width: 100%;
     text-align: center;
   }
