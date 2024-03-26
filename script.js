@@ -64,6 +64,10 @@ const createCard = (book) => {
   const card = document.createElement("div");
   card.classList.add("card");
 
+  const img = document.createElement("img");
+  img.src = "img/book.png";
+  card.appendChild(img);
+
   const title = document.createElement("h2");
   title.textContent = book.title;
   card.appendChild(title);
@@ -114,6 +118,12 @@ addBook.addEventListener("click", (e) => {
   const genre = genreInput.value;
   const pages = pagesInput.value;
   const read = false;
+
+  if (!title || !author) {
+    alert("Please enter a title and author");
+    return;
+  }
+
   const newBook = new Book(title, author, genre, pages, read);
   addBookToLibrary(newBook);
   console.log(myLibrary);
