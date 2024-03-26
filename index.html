@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo-and-title">
+        <h1><i class="fas fa-book-open"></i>Library</h1>
+      </div>
+      <div class="search">
+        <button type="button" id="displayAll">Display All Books</button>
+        <input type="text" id="search" />
+        <button type="button" id="searchBtn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <div class="user">
+        <button id="userBtn"><i class="fas fa-user"></i></button>
+        <dialog id="userDialog">
+          <form>
+            <input type="text" placeholder="Username" />
+            <input type="password" placeholder="Password" />
+            <button>Log in</button>
+            <button autofocus id="userClose">Close</button>
+            <button id="clearLibrary">Clear</button>
+          </form>
+        </dialog>
+      </div>
+    </header>
+    <main>
+      <div class="cardContainer"></div>
+    </main>
+    <footer>
+      <button id="openForm"><i class="fas fa-plus"></i></button>
+      <dialog id="bookDialog">
+        <form>
+          <input type="text" placeholder="Title" id="titleInput" name="title" />
+          <input
+            type="text"
+            placeholder="Author"
+            id="authorInput"
+            name="author"
+          />
+          <input type="text" placeholder="Genre" id="genreInput" name="genre" />
+          <input
+            type="number"
+            placeholder="Pages"
+            id="pagesInput"
+            name="pages"
+          />
+          <button id="addBook" type="submit">Add</button>
+          <button autofocus id="closeBook">Close</button>
+        </form>
+      </dialog>
+    </footer>
+  </body>
+</html>
