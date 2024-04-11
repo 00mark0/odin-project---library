@@ -126,8 +126,8 @@ addBook.addEventListener("click", (e) => {
   const pages = pagesInput.value;
   const read = false;
 
-  if (!title || !author) {
-    alert("Please enter a title and author");
+  if (!title || !author || !genre || !pages) {
+    alert("Please fill out all fields.");
     return;
   }
 
